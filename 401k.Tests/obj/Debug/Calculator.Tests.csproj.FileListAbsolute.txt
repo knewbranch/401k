@@ -1,0 +1,7 @@
+C:\projects\401k\401k.Tests\bin\Debug\Calculator.exe
+C:\projects\401k\401k.Tests\bin\Debug\Calculator.pdb
+C:\projects\401k\401k.Tests\obj\Debug\Calculator.Tests.csprojResolveAssemblyReference.cache
+C:\projects\401k\401k.Tests\bin\Debug\Calculator.Tests.dll
+C:\projects\401k\401k.Tests\bin\Debug\Calculator.Tests.pdb
+C:\projects\401k\401k.Tests\obj\Debug\Calculator.Tests.dll
+C:\projects\401k\401k.Tests\obj\Debug\Calculator.Tests.pdb

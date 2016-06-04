@@ -1,0 +1,6 @@
+C:\projects\401k\401k\bin\Debug\Calculator.exe.config
+C:\projects\401k\401k\bin\Debug\Calculator.exe
+C:\projects\401k\401k\bin\Debug\Calculator.pdb
+C:\projects\401k\401k\obj\Debug\Calculator.csprojResolveAssemblyReference.cache
+C:\projects\401k\401k\obj\Debug\Calculator.exe
+C:\projects\401k\401k\obj\Debug\Calculator.pdb
