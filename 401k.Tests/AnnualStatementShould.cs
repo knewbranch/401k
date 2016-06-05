@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Calculator.Enums;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Calculator.Tests
@@ -6,6 +7,10 @@ namespace Calculator.Tests
     [TestClass]
     public class AnnualStatementShould
     {
+        private decimal _grossPerPaycheck = 5000m;
+        private decimal _employeeContributionPercent = .10m;
+            
+
         [TestMethod]
         public void ReturnCorrectAnnualSalaryBase()
         {
@@ -34,12 +39,25 @@ namespace Calculator.Tests
             // Assert
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        public void ReturnCorrectAnnualSalary()
+        {
+            // Arrange
+            var paychecks = GetPaychecksForYear();
+            var annualStatement = new AnnualStatement(paychecks);
+            const int expected = 138000;
+
+            // Act
+            var actual = annualStatement.AnnualSalary;
+
+            // Assert
+            Assert.AreEqual(expected, actual);
+        }
+        
         #region Helpers
         private Paycheck GetPaycheck()
         {
-            var grossPerPaycheck = 5000m;
-            var employeeContributionPercent = .10m;
-            return new Paycheck(grossPerPaycheck, employeeContributionPercent);
+            return new Paycheck(_grossPerPaycheck, _employeeContributionPercent);
         }
 
         private List<Paycheck> GetPaychecksForYear()
@@ -50,6 +68,8 @@ namespace Calculator.Tests
             {
                 paychecks.Add(GetPaycheck());
             }
+            var bonus = new Bonus(paychecks);
+            paychecks.Add(new Paycheck(bonus.Value, _employeeContributionPercent, PaycheckType.Bonus));
             return paychecks;
         }
         #endregion

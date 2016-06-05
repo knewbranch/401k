@@ -21,9 +21,15 @@ namespace Calculator
             var sb = new StringBuilder();
             sb.AppendLine(string.Format("Year: {0} ({1})", Year, DateTime.Now.AddYears(Year).Year));
             sb.AppendLine("===========================");
-            sb.AppendLine(string.Format("Annual Salary Base: {0:C}", AnnualSalaryBase));
-            sb.AppendLine(string.Format("Annual Salary: {0:C}", AnnualSalary));
-            sb.AppendLine(string.Format("Annual Bonus: {0:C}", AnnualBonus));
+            sb.AppendLine(string.Format("Base Salary: {0:C}", AnnualSalaryBase));
+            sb.AppendLine(string.Format("Bonus: {0:C}", AnnualBonus));
+            sb.AppendLine(string.Format("Total Annual Salary: {0:C}", AnnualSalary));
+            sb.AppendLine(string.Format("Employee Contributions: {0:C}", EmployeeContributions));
+            sb.AppendLine(string.Format("Employee 401K Match: {0:C}", Employer401KMatch));
+            sb.AppendLine(string.Format("Employer Retirement Contribution: {0:C}", EmployerRetirementContribution));
+            sb.AppendLine(string.Format("401K Balance: {0:C}", Balance401K));
+            sb.AppendLine(string.Format("IRA Balance: {0:C}", BalanceIra));
+            sb.AppendLine(string.Format("Total Retirement Balance: {0:C}", BalanceTotal));
             sb.AppendLine();
             return sb.ToString();
         }

@@ -1,19 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Calculator.Enums;
 
 namespace Calculator
 {
     public class AnnualStatement
     {
         private readonly List<Paycheck> _paychecks;
-        private readonly Bonus _bonus;
         private readonly RetirementFund _retirementFund;
         
         public AnnualStatement(List<Paycheck> paychecks)
         {
             _paychecks = paychecks;
-            _bonus = new Bonus(paychecks);
+            _retirementFund = new RetirementFund(_paychecks);
         }
 
         public decimal AnnualSalary
@@ -27,12 +27,12 @@ namespace Calculator
         {
             get
             {
-                return _paychecks.Sum(x => x.GrossPay);
+                return _paychecks.Where(x => x.Type == PaycheckType.Regular).Sum(x => x.GrossPay);
             }
         }
         public decimal Bonus
         {
-            get { return _bonus.Value; }
+            get { return _paychecks.Where(x => x.Type == PaycheckType.Bonus).Sum(x => x.GrossPay); }
         }
         public decimal EmployeeContribution
         {
@@ -52,7 +52,7 @@ namespace Calculator
         }
         public decimal RetirementContribution
         {
-            get { return 0; }
+            get { return _retirementFund.Contribution; }
         }
     }
 }

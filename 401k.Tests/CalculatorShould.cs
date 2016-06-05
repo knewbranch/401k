@@ -8,7 +8,7 @@ namespace Calculator.Tests
     public class UnitTest1
     {
         [TestMethod]
-        public void ReturnCorrectAnnualSalaryBaseForYear1()
+        public void ReturnCorrectAnnualSalaryBaseForYear0()
         {
             // Arrange
             var input = GetCalculatorInput();
@@ -17,14 +17,14 @@ namespace Calculator.Tests
             // Act
             var calculator = new Calculator(input);
             var output = calculator.Calculate();
-            var actualAnnualSalary = output.Results.Single(x => x.Year == 1).AnnualSalaryBase;
+            var actualAnnualSalary = output.Results.Single(x => x.Year == 0).AnnualSalaryBase;
 
             // Assert
             Assert.AreEqual(expectedAnnualSalary, actualAnnualSalary);
         }
 
         [TestMethod]
-        public void ReturnCorrectBonusForYear1()
+        public void ReturnCorrectBonusForYear0()
         {
             // Arrange
             var input = GetCalculatorInput();
@@ -33,14 +33,14 @@ namespace Calculator.Tests
             // Act
             var calculator = new Calculator(input);
             var output = calculator.Calculate();
-            var actualBonus = output.Results.Single(x => x.Year == 1).AnnualBonus;
+            var actualBonus = output.Results.Single(x => x.Year == 0).AnnualBonus;
 
             // Assert
             Assert.AreEqual(expectedBonus, actualBonus);
         }
 
         [TestMethod]
-        public void ReturnCorrectAnnualSalaryForYear1()
+        public void ReturnCorrectAnnualSalaryForYear0()
         {
             // Arrange
             var input = GetCalculatorInput();
@@ -49,11 +49,14 @@ namespace Calculator.Tests
             // Act
             var calculator = new Calculator(input);
             var output = calculator.Calculate();
-            var actualAnnualSalary = output.Results.Single(x => x.Year == 1).AnnualSalary;
+            var actualAnnualSalary = output.Results.Single(x => x.Year == 0).AnnualSalary;
 
             // Assert
             Assert.AreEqual(expectedAnnualSalary, actualAnnualSalary);
         }
+
+
+        #region Helpers
         private CalculatorInput GetCalculatorInput()
         {
             return new CalculatorInput()
@@ -65,11 +68,12 @@ namespace Calculator.Tests
                 CurrentIraBalance = 207000,
                 EmployeeContributionPercent = .10m,
                 EmployerMatchMaxPercentPerPaycheck = .06m,
-                InterestRateAnnual = .06m,
+                InterestRateAnnual401k = .06m,
                 PaychecksPerYear = 24,
                 RetirementContributionPercentMonthly = .04m,
                 YearsUntilRetirement = 22
             };
         }
+        #endregion
     }
 }

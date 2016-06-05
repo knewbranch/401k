@@ -45,6 +45,8 @@
     <Compile Include="AnnualStatement.cs" />
     <Compile Include="Bonus.cs" />
     <Compile Include="Calculator.cs" />
+    <Compile Include="CompoundInterestCalculator.cs" />
+    <Compile Include="Enums\PaycheckType.cs" />
     <Compile Include="Messages\CalculatorInput.cs" />
     <Compile Include="Messages\CalculatorOutput.cs" />
     <Compile Include="CalculatorResult.cs" />

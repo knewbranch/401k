@@ -12,6 +12,7 @@
         public decimal Current401kBalance { get; set; }
         public decimal CurrentIraBalance { get; set; }
         public int YearsUntilRetirement { get; set; }
-        public decimal InterestRateAnnual { get; set; }
+        public decimal InterestRateAnnual401k { get; set; }
+        public decimal InterestRateAnnualIra { get; set; }
     }
 }
